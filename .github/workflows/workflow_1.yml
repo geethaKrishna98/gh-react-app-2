@@ -1,0 +1,32 @@
+name: Workflow 1
+on: push
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Linting
+        run: npm run lint
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Testing
+        run: npm run test
+  buliding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Buliding
+        run: npm run build
+      - name: Display build files
+        run: ls -l dist/
