@@ -20,6 +20,7 @@ jobs:
       - name: Testing
         run: npm run test
   buliding:
+    needs: [linting, testing]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
